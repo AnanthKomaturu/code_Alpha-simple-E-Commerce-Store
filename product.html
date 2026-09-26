@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple E-Commerce Store</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(
+        -45deg,
+        #dddfe7,
+        #246077,
+        #6a11cb,
+        #840b80
+    );
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+    padding:30px;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+    font-size:2.5rem;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+    color:white;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.product-image{
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+    background:rgba(255,255,255,0.1);
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:24px;
+    font-weight:bold;
+    color:#ffe082;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00c853;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#009624;
+}
+
+.cart{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+    font-size:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<h1>🛒 Simple E-Commerce Store</h1>
+
+<div class="cart">
+    Cart Items: <span id="cartCount">0</span>
+</div>
+
+<div class="products">
+
+    <div class="card">
+        <div class="product-image">📱</div>
+        <div class="card-content">
+            <h2>Smartphone</h2>
+            <p>Latest Android smartphone with great features.</p>
+            <div class="price">₹19,999</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="product-image">💻</div>
+        <div class="card-content">
+            <h2>Laptop</h2>
+            <p>Powerful laptop for study and work.</p>
+            <div class="price">₹49,999</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="product-image">⌚</div>
+        <div class="card-content">
+            <h2>Smart Watch</h2>
+            <p>Track fitness and notifications easily.</p>
+            <div class="price">₹3,999</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="product-image">🎧</div>
+        <div class="card-content">
+            <h2>Headphones</h2>
+            <p>Premium sound quality with deep bass.</p>
+            <div class="price">₹2,499</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+let cartCount = 0;
+
+function addToCart(){
+    cartCount++;
+    document.getElementById("cartCount").innerText = cartCount;
+}
+</script>
+
+</body>
+</html>

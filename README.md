@@ -50,6 +50,9 @@ Simple-Ecommerce-Store/
 * Shopping Cart
 
 ## 👨‍💻 Author
-Abhishek Kommu
+Komaturu Anantha Rao
+Btech-AI&DS
+Audisankara college of engineering gudur
+
 
 
